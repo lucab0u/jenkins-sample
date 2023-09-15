@@ -18,6 +18,7 @@ public class AppTest
     public AppTest( String testName )
     {
         super( testName );
+        App.main(null);
     }
 
     /**
@@ -33,7 +34,6 @@ public class AppTest
      */
     public void testApp()
     {
-        App.main(new String[] {});
         assertTrue( true);
     }
     
