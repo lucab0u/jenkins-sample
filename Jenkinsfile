@@ -17,6 +17,11 @@ node () {
 			} 
  		} 
 	}
+	stage ('Quality Check') {
+		withSonarQubeEnv('Sonar') {
+			bat "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=lucab0uorgnisation_jenkins-demo"
+		}
+	}
 	stage ('App-IC - Post build actions') {
 /*
 Please note this is a direct conversion of post-build actions. 
